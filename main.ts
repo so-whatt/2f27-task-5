@@ -1,26 +1,24 @@
-let list2: number[];
-input.onButtonPressed(Button.A, function on_button_pressed_a() {
+input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
-    for (let index = 0; index < 25; index++) {
+    for (let index = 0; index <= 24; index++) {
         led.plot(index % 5, index / 5)
         basic.pause(200)
     }
 })
-input.onButtonPressed(Button.AB, function on_button_pressed_ab() {
-    
+input.onButtonPressed(Button.AB, function () {
+	
 })
-input.onButtonPressed(Button.B, function on_button_pressed_b() {
-    
+input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
     x = -1
-    for (let index2 = 0; index2 < 4; index2++) {
-        for (let index22 = 0; index22 < 5; index22++) {
+    for (let index = 0; index <= 3; index++) {
+        for (let index2 = 0; index2 < 5; index2++) {
             x += 1
             led.plot(x, y)
             basic.pause(200)
         }
         y += 1
-        for (let index23 = 0; index23 < 5; index23++) {
+        for (let index2 = 0; index2 < 5; index2++) {
             led.plot(x, y)
             basic.pause(200)
             x += -1
@@ -30,8 +28,7 @@ input.onButtonPressed(Button.B, function on_button_pressed_b() {
 })
 let y = 0
 let x = 0
-for (let index3 = 0; index3 < 16; index3++) {
-    list2 : number[] = []
-    list2.push(Math.abs(Math.abs(index3 - 7.5) - 7.5))
-    console.log(list2)
+for (let index = 0; index <= 15; index++) {
+    let list: number[] = []
+    list.push(Math.abs(Math.abs(index - 7.5) - 7.5))
 }
