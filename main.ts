@@ -6,7 +6,21 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 input.onButtonPressed(Button.AB, function () {
-	
+    basic.clearScreen()
+    for (let index = 0; index < 2; index++) {
+        for (let index = 0; index < 4; index++) {
+            led.plot(list[count] % 4, list[count] - list[count] % 4)
+            basic.pause(200)
+            count += 1
+        }
+        for (let index = 0; index < 4; index++) {
+            led.plot(list[count] - list[count] % 4, list[count] % 4)
+            basic.pause(200)
+            count += 1
+        }
+        led.plot(4, 4)
+        basic.pause(200)
+    }
 })
 input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
@@ -28,7 +42,9 @@ input.onButtonPressed(Button.B, function () {
 })
 let y = 0
 let x = 0
+let list: number[] = []
+let count = 0
+count = 0
 for (let index = 0; index <= 15; index++) {
-    let list: number[] = []
     list.push(Math.abs(Math.abs(index - 7.5) - 7.5))
 }
