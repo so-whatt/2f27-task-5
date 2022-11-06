@@ -7,18 +7,8 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     basic.clearScreen()
-    for (let index = 0; index < 2; index++) {
-        for (let index = 0; index < 4; index++) {
-            led.plot(list[count] % 4, list[count] - list[count] % 4)
-            basic.pause(200)
-            count += 1
-        }
-        for (let index = 0; index < 4; index++) {
-            led.plot(list[count] - list[count] % 4, list[count] % 4)
-            basic.pause(200)
-            count += 1
-        }
-        led.plot(4, 4)
+    for (let index = 0; index <= 15; index++) {
+        led.plot(list[index], list[(12 + index) % 16])
         basic.pause(200)
     }
 })
@@ -44,7 +34,21 @@ let y = 0
 let x = 0
 let list: number[] = []
 let count = 0
-count = 0
-for (let index = 0; index <= 15; index++) {
-    list.push(Math.abs(Math.abs(index - 7.5) - 7.5))
-}
+list = [
+0,
+1,
+2,
+3,
+4,
+4,
+4,
+4,
+4,
+3,
+2,
+1,
+0,
+0,
+0,
+0
+]
